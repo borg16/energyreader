@@ -35,7 +35,9 @@ class EnergyReader:
                 #print(str(nextLength/skipCycle)+' ' +str(length/cycle))
                 
                 #if not(0.035 < length / cycle < 0.45) and 0.035 < nextLength / skipCycle < 0.045:
-                if (0.025 < nextLength / skipCycle < 0.065 and 0.8 < self.previousCycle / skipCycle < 1.3) or (length / cycle < 0.01 and nextLength / skipCycle > 0.04):
+                if (0.025 < nextLength / skipCycle < 0.065 and 0.8 < self.previousCycle / skipCycle < 1.3) \
+                    or (length / cycle < 0.01 and nextLength / skipCycle > 0.04) \
+                        or (length / cycle > 0.1 and nextLength / skipCycle < 0.1):
                     #print('Skip ' + str(length) + ' at ' + str(self.previousStart))
                     self.skipped = self.skipped + 1
                     self.previousEnd = n
