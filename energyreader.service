@@ -1,0 +1,11 @@
+[Unit]
+Description=Energy Reader Device
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/home/borg/Development/EnergyReaderDevice.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
